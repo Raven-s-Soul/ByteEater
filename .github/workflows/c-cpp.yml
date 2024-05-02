@@ -14,11 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    #- name: Setup Cpp
-    #  uses: aminya/setup-cpp@v1
-    #  with:
-    #      cmake: true
-    #      ninja: true
+    - name: Set up CMake
+      uses: jwlawson/actions-setup-cmake@v2
+      with:
+        cmake-version: '3.16.x'
+    - name: Use cmake
+      run: cmake --version
     
     - if: runner.os == 'Linux'
       name: ubuntu-build
