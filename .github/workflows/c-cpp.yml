@@ -23,12 +23,34 @@ jobs:
     
     - if: runner.os == 'Linux'
       name: ubuntu-build
-      run: buildUnixDarwin.sh
+      run: 
+        mkdir out
+        cd out
+        cmake ..
+        cd ..
+        cmake --build out
+        cd out
+        ./ByteEater
       
     - if: runner.os == 'macOS'
       name: macOS-build
-      run: buildUnixDarwin.sh
-      
+      run:  
+        mkdir out
+        cd out
+        cmake ..
+        cd ..
+        cmake --build out
+        cd out
+        ./ByteEater
+
     - if: runner.os == 'Windows'
       name: windows-build
-      run: buildWin.bat
+      run:
+        mkdir out
+        cd .\
+        out\
+        cmake ..
+        cd ..
+        cmake --build .\out\
+        cd out\ByteEater\Debug
+        ByteEater.exe
