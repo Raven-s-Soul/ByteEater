@@ -1,0 +1,33 @@
+name: ByteEater
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: [ubuntu-latest, windows-latest, macOS-latest]
+  
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Cpp
+      uses: aminya/setup-cpp@v1
+      with:
+          cmake: true
+          ninja: true
+    
+    - if: ${{ runner.os == ubuntu-latest }}
+      name: ubuntu-build
+      run: buildUnixDarwin.sh
+      
+    - if: ${{ runner.os == macOS-latest }}
+      name: macOS-build
+      run: buildUnixDarwin.sh
+      
+    - if: ${{ runner.os == windows-latest }}
+      name: windows-build
+      run: buildWin.bat
