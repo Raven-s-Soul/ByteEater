@@ -5,4 +5,5 @@ cd out
 cmake ..
 cd ..
 cmake --build out
-out/ByteEater
+cd out
+./ByteEater # <FileName.extension> <> ...

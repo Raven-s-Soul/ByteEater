@@ -3,4 +3,6 @@ cd .\out\
 cmake ..
 cd ..
 cmake --build .\out\
-.\out\Debug\ByteEater.exe
+cd .\out\Debug\
+:: ByteEater.exe <FileName.extension> <> ...
+ByteEater.exe
