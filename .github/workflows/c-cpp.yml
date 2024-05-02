@@ -8,18 +8,12 @@ on:
 
 jobs:
   build:
-
     runs-on: [ubuntu-latest, windows-latest, macOS-latest]
-  
     steps:
     - uses: actions/checkout@v4
     - uses: jwlawson/actions-setup-cmake@v2
       with:
         cmake-version: '3.16.x'
-      
-    - name: Use cmake
-      run: cmake --version
-    
     - if: runner.os == 'Linux'
       name: ubuntu-build
       run: |
@@ -28,7 +22,6 @@ jobs:
         cmake ..
         cd ..
         cmake --build out
-      
     - if: runner.os == 'macOS'
       name: macOS-build
       run: |
@@ -37,7 +30,6 @@ jobs:
         cmake ..
         cd ..
         cmake --build out
-
     - if: runner.os == 'Windows'
       name: windows-build
       run: |
