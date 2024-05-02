@@ -3,10 +3,12 @@ cd .\out\
 cmake ..
 cd ..
 cmake --build .\out\
-::cd out\ByteEater\Debug
 
 :: for VisualStudio use this
-cd out\build\x64-Debug\ByteEater\
+::cd out\build\x64-Debug\ByteEater\
+
+:: for other
+cd out\ByteEater\Debug
 
 :: ByteEater.exe <FileName.extension> <> ...
 ByteEater.exe
