@@ -28,15 +28,9 @@ jobs:
         c_compiler: [gcc, clang, cl]
         exclude:
           - os: windows-latest
+            c_compiler: clang
+          - os: ubuntu-latest
             c_compiler: cl
-          - os: windows-latest
-            c_compiler: clang
-          - os: ubuntu-latest
-            c_compiler: gcc
-          - os: ubuntu-latest
-            c_compiler: clang
-          - os: macOS-latest
-            c_compiler: gcc
           - os: macOS-latest
             c_compiler: cl
 
