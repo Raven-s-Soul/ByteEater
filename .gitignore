@@ -366,3 +366,4 @@ FodyWeavers.xsd
 /CMakePresets.json
 /CMakeSettings.json
 /.gitattributes
+.vscode/*

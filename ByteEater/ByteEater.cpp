@@ -13,21 +13,26 @@ int main(int argc, char *argv[])
 		for (int i = 1; i < argc; i++)
 		{
 			// std::cout << "Argument " << (i + 1) << ": " << argv[i]<<std::endl;
-			if (!trascrizione(argv[i]))
-			{
-				LOG("Errore Trascrizione");
-			}
-			else
-				LOG("Effettuato");
+			if (Convert)
+				if (!trascrizione(argv[i]))
+				{
+					LOG("Errore Trascrizione");
+				}
+				else
+				{
+					LOG("Effettuato");
+				}
 
-			LOG("Parte 2");
-
-			if (!deTrascrizione(argv[i]))
-			{
-				LOG("Errore Trascrizione");
-			}
-			else
-				LOG("Effettuato");
+			// LOG("Parte 2");
+			if (DeConvert)
+				if (!deTrascrizione(argv[i]))
+				{
+					LOG("Errore Trascrizione");
+				}
+				else
+				{
+					LOG("Effettuato");
+				}
 		}
 	}
 

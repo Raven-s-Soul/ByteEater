@@ -3,13 +3,16 @@
 
 bool trascrizione(char *nome)
 {
-	FILE *B = fopen(nome, "rb");		// Lettura Binario
-	FILE *T = fopen("file.Eated", "w"); // Scrittura Text
+	std::string filename = PREFIX;
+	filename = filename + nome + EXTENTION;
+
+	FILE *B = fopen(nome, "rb");			// Lettura Binario
+	FILE *T = fopen(filename.c_str(), "w"); // Scrittura Text
 
 	if (B == NULL || T == NULL)
 		return false;
 
-	int byte;
+	char byte;
 	while (fread(&byte, sizeof(char), chunk, B) == 1)
 	{
 		// LOG( byte );
@@ -23,8 +26,12 @@ bool trascrizione(char *nome)
 
 bool deTrascrizione(char *nome)
 {
-	FILE *T = fopen("file.Eated", "r"); // Scrittura Text
-	FILE *B = fopen("file.pdf", "wb");	// Lettura Binario
+	std::string filename = PREFIX;
+
+	filename = filename + nome;
+	FILE *B = fopen(filename.c_str(), "wb"); // Lettura Binario
+	filename = filename + EXTENTION;
+	FILE *T = fopen(filename.c_str(), "r"); // Scrittura Text
 
 	if (B == NULL || T == NULL)
 		return false;
