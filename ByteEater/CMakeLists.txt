@@ -3,7 +3,7 @@
 #
 
 # Aggiungere l'origine all'eseguibile di questo progetto.
-add_executable (ByteEater "ByteEater.cpp" "ByteEater.h")
+add_executable (ByteEater "ByteEater.cpp" "ByteEater.h" "File.cpp" "File.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ByteEater PROPERTY CXX_STANDARD 20)
