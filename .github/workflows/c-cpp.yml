@@ -13,12 +13,12 @@ jobs:
   
     steps:
     - uses: actions/checkout@v4
-
-    - name: Setup Cpp
-      uses: aminya/setup-cpp@v1
-      with:
-          cmake: true
-          ninja: true
+    
+    #- name: Setup Cpp
+    #  uses: aminya/setup-cpp@v1
+    #  with:
+    #      cmake: true
+    #      ninja: true
     
     - if: runner.os == 'Linux'
       name: ubuntu-build
