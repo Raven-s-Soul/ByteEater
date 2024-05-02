@@ -20,14 +20,14 @@ jobs:
           cmake: true
           ninja: true
     
-    - if: ${{ runner.os == ubuntu-latest }}
+    - if: runner.os == 'Linux'
       name: ubuntu-build
       run: buildUnixDarwin.sh
       
-    - if: ${{ runner.os == macOS-latest }}
+    - if: runner.os == 'macOS'
       name: macOS-build
       run: buildUnixDarwin.sh
       
-    - if: ${{ runner.os == windows-latest }}
+    - if: runner.os == 'Windows'
       name: windows-build
       run: buildWin.bat
