@@ -83,8 +83,8 @@ bool deTrascrizione(char *nome)
 	if (B == NULL || T == NULL)
 		return false;
 
-	char hexA = NULL;
-	char hexB = NULL;
+	char hexA = '0';
+	char hexB = '0';
 	while (fscanf(T, "%c%c", &hexA, &hexB) > 0)
 	{
 		char t = (char)(Hexc2int(hexA, hexB) - 128);
@@ -99,7 +99,7 @@ bool deTrascrizione(char *nome)
 }
 
 /*
-//* Decimale
+// Decimale
 bool trascrizione(char *nome)
 {
 	std::string filename = PREFIX;
