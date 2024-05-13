@@ -1,8 +1,8 @@
 ﻿cmake_minimum_required (VERSION 3.8)
 
 # Needed for tests
-# set(CMAKE_CXX_COMPILER cl)
-set(CMAKE_CXX_COMPILER cl) # Using windows 
+set(CMAKE_CXX_COMPILER g++)
+#set(CMAKE_CXX_COMPILER cl) # Using windows
 
 # Abilita Ricaricamento rapido per i compilatori MSVC, se supportato.
 if (POLICY CMP0141)
